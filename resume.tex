@@ -1,0 +1,135 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Ashwin KV} \\ \vspace{1pt}
+    \small MERN Stack Developer \\
+    \faPhone \hspace{1pt} +91 9567454484 $|$ 
+    \href{mailto:ashwinkv.akv@gmail.com}{\faEnvelope \hspace{1pt} \color{blue}\underline{ashwinkv.akv@gmail.com}} $|$
+    \faLinkedin \hspace{1pt} \href{https://www.linkedin.com/in/ashwin-kv/}{\color{blue}\underline{LinkedIn}} $|$
+    \faGithub \href{https://github.com/dreamographer}{\color{blue}\underline{GitHub}} $|$
+    \faGlobe \hspace{1pt} \href{https://leetcode.com/u/Ashwin_K_V/}{\color{blue}\underline{LeetCode}}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Summary}
+Full Stack Developer with expertise in MERN stack and TypeScript, focused on building scalable web applications with clean architecture. Experienced in developing SaaS platforms and implementing modern development practices.
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:} JavaScript, TypeScript, SQL, HTML, CSS, Python, Java \\
+     \textbf{Frameworks \& Libraries:} Express.js, Next.js, Nest.js, React, Redux Toolkit, Tailwind CSS \\
+     \textbf{Databases \& Tools:} MongoDB, MySQL, PostgreSQL, Node.js, Git, Docker, AWS (EC2, S3, SQS), Socket.IO
+    }}
+\end{itemize}
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Full Stack Developer}{Aug 2024 - Present}
+{Finanshels}{Kozhikode, India}
+\resumeItemListStart
+\resumeItem{Developed and maintained core features using Next.js frontend and Nest.js/Express.js microservices backend architecture.}
+\resumeItem{Implemented document management system and automated compliance workflows using TypeScript and PostgreSQL.}
+\resumeItem{Built internal tools and automation systems including email integration, client onboarding, and ticket management.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeSubheading
+{\textbf{Finanshels} - Financial Management SaaS}{Aug 2024 - Present}
+{}{\color{blue}\underline{\href{https://www.finanshels.com/finanshels-app}{Live Link}}}
+\resumeItemListStart
+\resumeItem{Developed a comprehensive financial management platform using Next.js with responsive design.}
+\resumeItem{Implemented document management system and Google Calendar integration for compliance tracking.}
+\resumeItem{Built scalable application architecture using Next.js, Nest.js, Redux Toolkit, and PostgreSQL database.}
+\resumeItemListEnd
+\resumeSubheading
+{\textbf{Finanshels Team} - Internal Management System}{Aug 2024 - Present}
+{}{Internal Tool}
+\resumeItemListStart
+\resumeItem{Developed document collection and extraction system using Express.js, AWS SQS, and Gemini AI, reducing manual processing time by 60\% for CT registration process.}
+\resumeItem{Implemented centralized mail system with Gmail integration and AWS S3-based document repository, enabling streamlined client communication history and document management.}
+\resumeItem{Built comprehensive client onboarding system with automated notifications to Slack and email, including employee document management portal using React and Nest.js.}
+\resumeItemListEnd
+\resumeSubheading
+{\textbf{ZenSync} - SaaS Application}{\color{blue}\underline{\href{https://www.zensync.ltd/}{Live Link}} \color{black} $|$ \color{blue}\underline{\href{https://github.com/dreamographer/zenSync-backend}{GitHub}}}
+{}{}
+\resumeItemListStart
+\resumeItem{Developed a collaborative productivity platform with TypeScript, Next.js frontend, and Node.js/Express backend.}
+\resumeItem{Implemented JWT authentication, Passport.js for OAuth, and real-time communication using Livekit SDK.}
+\resumeItem{Utilized Zustand for state management and implemented Clean Architecture patterns.}
+\resumeItemListEnd
+\resumeSubheading
+{\textbf{Offiq} - E-commerce Platform}{\color{blue}\underline{\href{https://www.offiq.shop/}{Live Link}} \color{black} $|$ \color{blue}\underline{\href{https://github.com/dreamographer/OFFIQ}{GitHub}}}
+{}{}
+\resumeItemListStart
+\resumeItem{Built RESTful APIs using Node.js/Express for product listings, user authentication, and order management.}
+\resumeItem{Integrated Razorpay payment gateway and MongoDB for efficient data management.}
+\resumeItem{Developed comprehensive admin dashboard with analytics and reporting features.}
+\resumeItem{Implemented advanced search, filter, and sorting functionalities for enhanced user experience.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{MERN Stack Development}{2023 - 2024}
+{Brototype}{Trivandrum}
+\resumeSubheading
+{Bachelor of Computer Applications}{2020 - 2023}
+{St. Aloysius College, Mangalore}{CGPA: 8.16}
+\resumeSubHeadingListEnd
+
+\section{Achievements}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Head of Coding Event} - Composite 23, National Level IT Fest, St. Aloysius College \\
+     \textbf{First Place} - Joshiana 11.0, National Level IT Fest, St. Joseph Engineering College \\
+     \textbf{First Place} - Noesis 2023, National Level IT Fest, Rosary College
+    }}
+\end{itemize}
+
+\end{document}
