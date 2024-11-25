@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { MainCategory } from '../types';
-import useStore from '../store/useStore';
-import Toast from './Toast';
-import { formatCurrency } from '../utils/formatCurrency';
+import React, { useState } from "react";
+import { MainCategory } from "../types";
+import useStore from "../store/useStore";
+import Toast from "./Toast";
+import { formatCurrency } from "../utils/formatCurrency";
 
 export default function ExpenseForm() {
-  const [amount, setAmount] = useState('');
-  const [description, setDescription] = useState('');
-  const [mainCategory, setMainCategory] = useState<MainCategory>('NEEDS');
-  const [subcategoryId, setSubcategoryId] = useState('');
-  const [error, setError] = useState('');
+  const [amount, setAmount] = useState("");
+  const [description, setDescription] = useState("");
+  const [mainCategory, setMainCategory] = useState<MainCategory>(
+    MainCategory.NEEDS
+  );
+  const [subcategoryId, setSubcategoryId] = useState("");
+  const [error, setError] = useState(""); 
   const [showToast, setShowToast] = useState(false);
 
   const { subcategories, addExpense } = useStore();
@@ -19,7 +21,7 @@ export default function ExpenseForm() {
 
     const subcategory = subcategories.find((s) => s.id === subcategoryId);
     if (!subcategory) {
-      setError('Please select a subcategory');
+      setError("Please select a subcategory");
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
       return;
@@ -27,7 +29,11 @@ export default function ExpenseForm() {
 
     const expenseAmount = parseFloat(amount);
     if (subcategory.spent + expenseAmount > subcategory.budget) {
-      setError(`This expense would exceed the subcategory budget of ${formatCurrency(subcategory.budget)}`);
+      setError(
+        `This expense would exceed the subcategory budget of ${formatCurrency(
+          subcategory.budget
+        )}`
+      );
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
       return;
@@ -40,17 +46,19 @@ export default function ExpenseForm() {
       subcategoryId,
     });
 
-    setAmount('');
-    setDescription('');
-    setSubcategoryId('');
+    setAmount("");
+    setDescription("");
+    setSubcategoryId("");
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold mb-4">Add Expense</h2>
+    <div className="neo-card">
+      <h2 className="text-2xl font-bold mb-6 border-b-4 border-black pb-2">
+        Add Expense
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-bold text-black mb-2">
             Amount
           </label>
           <input
@@ -59,17 +67,17 @@ export default function ExpenseForm() {
             required
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="neo-input w-full"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-bold text-black mb-2">
             Category
           </label>
           <select
             value={mainCategory}
             onChange={(e) => setMainCategory(e.target.value as MainCategory)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="neo-select w-full"
           >
             <option value="NEEDS">Needs</option>
             <option value="WANTS">Wants</option>
@@ -77,13 +85,13 @@ export default function ExpenseForm() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-bold text-black mb-2">
             Subcategory
           </label>
           <select
             value={subcategoryId}
             onChange={(e) => setSubcategoryId(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="neo-select w-full"
           >
             <option value="">Select a subcategory</option>
             {subcategories
@@ -96,19 +104,19 @@ export default function ExpenseForm() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-bold text-black mb-2">
             Description
           </label>
           <input
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            className="neo-input w-full"
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="neo-button w-full bg-[#FF3366] text-white font-bold hover:bg-[#FF1F59]"
         >
           Add Expense
         </button>

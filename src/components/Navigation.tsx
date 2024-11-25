@@ -7,35 +7,41 @@ export default function Navigation() {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-white border-t border-gray-200 fixed bottom-0 w-full">
+    <nav className="bg-[#FF3366] border-t-4 border-black fixed bottom-0 w-full">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-around py-4">
           <button
             onClick={() => navigate('/')}
-            className={`flex flex-col items-center space-y-1 ${
-              location.pathname === '/' ? 'text-blue-500' : 'text-gray-600'
+            className={`neo-button ${
+              location.pathname === '/' ? 'bg-[#FFDE00]' : 'bg-white'
             }`}
           >
-            <Home className="h-6 w-6" />
-            <span className="text-xs">Home</span>
+            <div className="flex flex-col items-center space-y-1">
+              <Home className="h-6 w-6" />
+              <span className="text-xs font-bold">Home</span>
+            </div>
           </button>
           <button
             onClick={() => navigate('/assets')}
-            className={`flex flex-col items-center space-y-1 ${
-              location.pathname === '/assets' ? 'text-blue-500' : 'text-gray-600'
+            className={`neo-button ${
+              location.pathname === '/assets' ? 'bg-[#FFDE00]' : 'bg-white'
             }`}
           >
-            <DollarSign className="h-6 w-6" />
-            <span className="text-xs">Assets</span>
+            <div className="flex flex-col items-center space-y-1">
+              <DollarSign className="h-6 w-6" />
+              <span className="text-xs font-bold">Assets</span>
+            </div>
           </button>
           <button
             onClick={() => navigate('/settings')}
-            className={`flex flex-col items-center space-y-1 ${
-              location.pathname === '/settings' ? 'text-blue-500' : 'text-gray-600'
+            className={`neo-button ${
+              location.pathname === '/settings' ? 'bg-[#FFDE00]' : 'bg-white'
             }`}
           >
-            <Settings className="h-6 w-6" />
-            <span className="text-xs">Settings</span>
+            <div className="flex flex-col items-center space-y-1">
+              <Settings className="h-6 w-6" />
+              <span className="text-xs font-bold">Settings</span>
+            </div>
           </button>
         </div>
       </div>
